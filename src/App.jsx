@@ -13,13 +13,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 const validationSchema = Yup.object({
-  email: Yup.string().email('Invalid email address').required('Required'),
+  email: Yup.string().email('Невірна адреса електронної пошти').required("Обов'язково"),
   password: Yup.string()
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])/,
-      'Password must contain at least one lowercase, one uppercase, and one special character'
+      'Пароль має містити принаймні одну нижню літеру, одну велику літеру та один спеціальний символ'
     )
-    .required('Required'),
+    .required("Обов'язково"),
 });
 
 const SignIn = () => {
