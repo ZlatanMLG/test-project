@@ -18,3 +18,23 @@
 Вивід помилок реалізувати щонайменше за допомогою alert().
 
 Було використано інструмент збірки vite, шаблон та деякі бібліотеки MaterialUI, yup для перевірки змінних та formik, щоб провалідувати поля вводу адреси електронної пошти та паролю користувача.
+
+Для початку запустимо на локалхості сторінку:
+
+![alt text](https://github.com/ZlatanMLG/test-project/blob/main/public/img1.png?raw=true)
+
+При спробі ввести пошту чи пароль що не відповідають правилам, червоним зазначаємо біля полів помилку:
+
+![alt text](https://github.com/ZlatanMLG/test-project/blob/main/public/img2.png?raw=true)
+
+Якщо ввести дані відповідно поставленим вимогам - помилки зникають:
+
+![alt text](https://github.com/ZlatanMLG/test-project/blob/main/public/img3.png?raw=true)
+
+Але при спробі авторизуватися, ми отримаємо помилку, оскільки конкретно цього користувача нема в системі:
+
+![alt text](https://github.com/ZlatanMLG/test-project/blob/main/public/img4.png?raw=true)
+
+Користувачі, дані яких зберігаються зазначені списком пар даних в коді App.jsx. Щойно ми введемо правильні дані і спробуємо увійти, нас перенаправляє на іншу сторінку:
+
+![alt text](https://github.com/ZlatanMLG/test-project/blob/main/public/img5.png?raw=true)
