@@ -9,18 +9,15 @@ import {
     createTheme, 
     ThemeProvider } from '@mui/material';
   import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-  import validationSchema from '../../components/getFormik/validationScheme';
-  import Submit from '../../pages/auth/components/formik/Submit';
+  import validationSchema from './components/formik/validationScheme';
+  import onSubmit from './components/formik/onSubmit';
   import NewFormikObject from '../../components/getFormik';
   import initialValues from '../../pages/auth/components/formik/formik';
   import { useNavigate } from 'react-router-dom';
   
   const SignIn = () => {
     const navigate = useNavigate();
-    const onSubmit = (values) => {
-      Submit(values, navigate);
-    }
-    const formik = NewFormikObject(initialValues, validationSchema, onSubmit);
+    const formik = NewFormikObject(initialValues, validationSchema,  (values) => onSubmit(values, navigate));
     const { handleSubmit, handleChange, values, touched, errors } = formik;
     return (
     <ThemeProvider theme={createTheme()}>

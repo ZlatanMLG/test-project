@@ -12,6 +12,8 @@ const AppRouter = () => {
             {isUserAuthenticated && authRoutes.map(({ path, Component }) => (
                 <Route key={path} path={path} element={<Component />} exact />
             ))},
+            
+            {/* після логінки токен в локал сторедж (зберігання токену з локалсторелджу і прионовленні сторінки перевірку на співпадіння токену з юзером, і якщо так - не перекидувати на логінку. Інформацію про користувача записувати в стор. щоб їх використовувати по всьому проектуможна було. */}
             {publicRoutes.map(({ path, Component }) => (
             <Route key={path} path={path} element={<Component />} exact />
             ))},
