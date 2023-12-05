@@ -14,10 +14,15 @@ import {
   import NewFormikObject from '../../components/getFormik';
   import initialValues from '../../pages/auth/components/formik/formik';
   import { useNavigate } from 'react-router-dom';
-  
+  import { useSnackbar } from 'notistack';
+  import { Context } from '../../index';
+  import { useContext } from 'react';
+
   const SignIn = () => {
     const navigate = useNavigate();
-    const formik = NewFormikObject(initialValues, validationSchema,  (values) => onSubmit(values, navigate));
+    const { user } = useContext(Context);
+    const { enqueueSnackbar } = useSnackbar();
+    const formik = NewFormikObject(initialValues, validationSchema,  (values) => onSubmit(values, enqueueSnackbar, user, navigate));
     const { handleSubmit, handleChange, values, touched, errors } = formik;
     return (
     <ThemeProvider theme={createTheme()}>
